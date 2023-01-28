@@ -1,4 +1,5 @@
 const yargs = require("yargs");
+const { addNote, getNotes } = require("./notes.controller");
 const pkg = require("./package.json");
 
 yargs.version(pkg.version);
@@ -14,15 +15,16 @@ yargs.command({
     },
   },
   handler({ title }) {
-    console.log("Print Note title");
+    addNote(title);
   },
 });
 
 yargs.command({
   command: "list",
   describe: "All notes",
-  handler() {
-    console.log("Print all notes");
+  async handler() {
+    const notes = await getNotes();
+    console.log(notes);
   },
 });
 

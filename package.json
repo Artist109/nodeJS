@@ -13,6 +13,8 @@
   "author": "Sergey Fadeecv <artistsilen@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@types/yargs": "^17.0.20",
+    "chalk": "^5.2.0",
     "yargs": "^17.6.2"
   }
 }
